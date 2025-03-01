@@ -44,20 +44,20 @@ public class RabbitMQConfig {
      *     RabbitMQ에서 수신된 메시지가 receiver.receiveMessage(String message) 메서드로 전달됩니다.
      */
 
-    // 큐 네임을 설정한다.
+    // 큐 이름을 설정한다.
     public static final String QUEUE_NAME = "helloqueue";
 
-    @Bean
+//    @Bean
     public Queue qeueue() {
         return new Queue(QUEUE_NAME, false);
     }
 
-    @Bean
+//    @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         return new RabbitTemplate(connectionFactory);
     }
 
-    @Bean
+//    @Bean
     public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
                                                     MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
@@ -67,7 +67,7 @@ public class RabbitMQConfig {
         return container;
     }
 
-    @Bean
+//    @Bean
     public MessageListenerAdapter listenerAdapter(Receiver receiver) {
         return new MessageListenerAdapter(receiver, "receiveMessage");
     }
