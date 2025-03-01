@@ -1,4 +1,4 @@
-package com.edu.HelloMessageQueue.step0;
+package com.edu.HelloMessageQueue.step1;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
