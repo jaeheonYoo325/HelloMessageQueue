@@ -9,8 +9,8 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-public class WorkRabbitMQConfig {
+//@Configuration
+public class RabbitMQConfig {
 
     // 큐 이름을 정의합니다.
     public static final String QUEUE_NAME = "WorkQueue";
