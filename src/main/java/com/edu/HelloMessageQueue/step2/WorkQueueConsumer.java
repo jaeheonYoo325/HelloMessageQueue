@@ -2,7 +2,7 @@ package com.edu.HelloMessageQueue.step2;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class WorkQueueConsumer {
     public void workQueueTask(String message) {
         String[] messageParts = message.split("\\|");

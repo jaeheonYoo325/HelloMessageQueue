@@ -7,7 +7,7 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class RabbitMQConfig {
     // step4 예제 추가
     public static final String FANOUT_EXCHANGE_FOR_NEWS = "newsExchange";

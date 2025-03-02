@@ -3,7 +3,7 @@ package com.edu.HelloMessageQueue.step1;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Sender {
 
     private final RabbitTemplate rabbitTemplate;
