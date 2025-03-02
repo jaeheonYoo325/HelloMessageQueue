@@ -4,25 +4,25 @@ import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class RabbitMQConfig {
     public static final String ORDER_COMPLETED_QUEUE = "order_completed_queue";
     public static final String ORDER_EXCHANGE = "order_completed_exchange";
     public static final String DLQ = "deadLetterQeueue";
     public static final String DLX = "deadLetterExchange";
 
-    @Bean
+//    @Bean
     public TopicExchange orderExchange() {
         return new TopicExchange(ORDER_EXCHANGE);
     }
 
-    @Bean
+//    @Bean
     public TopicExchange deadLetterExchange() {
         return new TopicExchange(DLX);
     }
 
     // 메시지가 처리되지 못했을 경우 자동으로 Deadletterqueue 이동시킴
-    @Bean
+//    @Bean
     public Queue orderQueue() {
         return QueueBuilder.durable(ORDER_COMPLETED_QUEUE)
                 .withArgument("x-dead-letter-exchange", DLX) // Dead letter Exchange 설정
@@ -31,17 +31,17 @@ public class RabbitMQConfig {
                 .build();
     }
 
-    @Bean
+//    @Bean
     public Queue deadLetterQueue() {
         return new Queue(DLQ);
     }
 
-    @Bean
+//    @Bean
     public Binding orderCompletedBinding() {
         return BindingBuilder.bind(orderQueue()).to(orderExchange()).with("order.completed.#");
     }
 
-    @Bean
+//    @Bean
     public Binding deadLetterBinding() {
         return BindingBuilder.bind(deadLetterQueue()).to(deadLetterExchange()).with(DLQ);
     }

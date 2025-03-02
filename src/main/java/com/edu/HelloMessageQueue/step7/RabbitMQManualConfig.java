@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 /**
  * RabbitMQ 리스너의 설정을 커스터마이징 한다.
  */
-@EnableRabbit
-@Configuration
+//@EnableRabbit
+//@Configuration
 public class RabbitMQManualConfig {
 
-    @Bean
+//    @Bean
     public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(ConnectionFactory connectionFactory) {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);

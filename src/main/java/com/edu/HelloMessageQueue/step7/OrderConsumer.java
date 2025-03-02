@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@Component
+//@Component
 public class OrderConsumer {
     private static final int MAX_RETRIES = 3; // 총 시도 제한 수
     private int retryCount = 0; // 재시도 횟수
