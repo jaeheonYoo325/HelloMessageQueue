@@ -1,10 +1,10 @@
-package com.edu.HelloMessageQueue.step8;
+package com.edu.HelloMessageQueue.step8_1;
 
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class RabbitMQConfig {
     // 큐, 교환기, 라우팅 키 이름 정의
     public static final String ORDER_COMPLETED_QUEUE = "orderCompletedQueue";
@@ -14,19 +14,19 @@ public class RabbitMQConfig {
     public static final String DEAD_LETTER_ROUTING_KEY = "dead.letter";
 
     // 원래 큐에 연결된 Topic Exchange
-    @Bean
+//    @Bean
     public TopicExchange orderExchange() {
         return new TopicExchange(ORDER_TOPIC_EXCHANGE);
     }
 
     // Dead Letter Exchange
-    @Bean
+//    @Bean
     public TopicExchange deadLetterExchange() {
         return new TopicExchange(ORDER_TOPIC_DLX);
     }
 
     // 원래 큐 설정
-    @Bean
+//    @Bean
     public Queue orderQueue() {
         return QueueBuilder.durable(ORDER_COMPLETED_QUEUE)
                 .withArgument("x-dead-letter-exchange", ORDER_TOPIC_DLX) // DLX 설정
@@ -35,19 +35,19 @@ public class RabbitMQConfig {
     }
 
     // Dead Letter Queue 설정
-    @Bean
+//    @Bean
     public Queue deadLetterQueue() {
         return QueueBuilder.durable(DLQ).build();
     }
 
     // 원래 큐와 Exchange 바인딩
-    @Bean
+//    @Bean
     public Binding orderQueueBinding() {
         return BindingBuilder.bind(orderQueue()).to(orderExchange()).with("order.completed");
     }
 
     // Dead Letter Queue와 Dead Letter Exchange 바인딩
-    @Bean
+//    @Bean
     public Binding deadLetterQueueBinding() {
         return BindingBuilder.bind(deadLetterQueue()).to(deadLetterExchange()).with(DEAD_LETTER_ROUTING_KEY);
     }

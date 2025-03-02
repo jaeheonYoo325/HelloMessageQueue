@@ -1,11 +1,11 @@
-package com.edu.HelloMessageQueue.step8;
+package com.edu.HelloMessageQueue.step8_1;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class OrderConsumer {
     private final RabbitTemplate rabbitTemplate;
     private final RetryTemplate retryTemplate;

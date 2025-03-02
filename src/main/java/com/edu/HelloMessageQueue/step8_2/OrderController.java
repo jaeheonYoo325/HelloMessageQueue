@@ -1,4 +1,4 @@
-package com.edu.HelloMessageQueue.step8;
+package com.edu.HelloMessageQueue.step8_2;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
