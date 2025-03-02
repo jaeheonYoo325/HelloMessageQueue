@@ -3,10 +3,11 @@ package com.edu.HelloMessageQueue.step3;
 public class NotificationMessage {
     private String message;
 
+    // 기본 생성자 (필수)
     public NotificationMessage() {
-
     }
 
+    // 선택
     public NotificationMessage(String message) {
         this.message = message;
     }
@@ -15,6 +16,7 @@ public class NotificationMessage {
         return message;
     }
 
+    // 필수
     public void setMessage(String message) {
         this.message = message;
     }
