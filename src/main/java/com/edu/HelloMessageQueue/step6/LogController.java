@@ -3,8 +3,8 @@ package com.edu.HelloMessageQueue.step6;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/logs")
+//@RestController
+//@RequestMapping("/api/logs")
 public class LogController {
     private final CustomExceptionHandler exceptionHandler;
 
