@@ -7,7 +7,7 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class RabbitMQConfig {
 
     // 큐 이름을 정의
@@ -17,37 +17,37 @@ public class RabbitMQConfig {
 
     public static final String DIRECT_EXCHANGE = "direct_exchange";
 
-    @Bean
+//    @Bean
     public DirectExchange directExchange() {
         return new DirectExchange(DIRECT_EXCHANGE);
     }
 
-    @Bean
+//    @Bean
     public Queue errorQueue() {
         return new Queue(ERROR_QUEUE, false);
     }
 
-    @Bean
+//    @Bean
     public Queue warnQueue() {
         return new Queue(WARN_QUEUE, false);
     }
 
-    @Bean
+//    @Bean
     public Queue infoQueue() {
         return new Queue(INFO_QUEUE, false);
     }
 
-    @Bean
+//    @Bean
     public Binding errorBinding() {
         return BindingBuilder.bind(errorQueue()).to(directExchange()).with("error");
     }
 
-    @Bean
+//    @Bean
     public Binding warnBinding() {
         return BindingBuilder.bind(warnQueue()).to(directExchange()).with("warn");
     }
 
-    @Bean
+//    @Bean
     public Binding infoBinding() {
         return BindingBuilder.bind(infoQueue()).to(directExchange()).with("info");
     }

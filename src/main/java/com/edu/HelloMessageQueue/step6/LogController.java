@@ -1,12 +1,11 @@
-package com.edu.HelloMessageQueue.step5;
+package com.edu.HelloMessageQueue.step6;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//@RestController
-//@RequestMapping("/api/logs")
+@RestController
+@RequestMapping("/api/logs")
 public class LogController {
-
     private final CustomExceptionHandler exceptionHandler;
 
     public LogController(CustomExceptionHandler exceptionHandler) {
@@ -16,8 +15,8 @@ public class LogController {
     @GetMapping("/error")
     public ResponseEntity<String> errorAPI() {
         try {
-          String value = null;
-          value.getBytes(); // null pointer
+            String value = null;
+            value.getBytes(); // null pointer
         } catch (Exception e) {
             exceptionHandler.handleException(e);
         }
