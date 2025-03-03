@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Component
+//@Component
 public class MessageProducer {
+    /*
     private final StockRepository stockRepository;
     private final RabbitTemplate rabbitTemplate;
 
@@ -52,4 +53,5 @@ public class MessageProducer {
             return null;
         });
     }
+     */
 }

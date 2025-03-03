@@ -1,4 +1,4 @@
-package com.edu.HelloMessageQueue.step9;
+package com.edu.HelloMessageQueue.step10;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,10 +8,10 @@ import lombok.ToString;
 
 import java.time.LocalDateTime;
 
-//@Entity
-//@ToString
+@Entity
+@ToString
 public class StockEntity {
-    /*
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +24,7 @@ public class StockEntity {
     private LocalDateTime updatedAt;
 
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -71,5 +72,6 @@ public class StockEntity {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-     */
+
+
 }

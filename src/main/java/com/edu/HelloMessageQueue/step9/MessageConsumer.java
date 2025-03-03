@@ -5,8 +5,9 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Component
+//@Component
 public class MessageConsumer {
+    /*
     private final StockRepository stockRepository;
 
     public MessageConsumer(StockRepository stockRepository) {
@@ -27,4 +28,5 @@ public class MessageConsumer {
             throw e; // todo 메시지를 데드레터 큐에 집어넣는다..
         }
     }
+     */
 }

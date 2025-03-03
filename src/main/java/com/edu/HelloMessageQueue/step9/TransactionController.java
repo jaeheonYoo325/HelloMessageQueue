@@ -4,9 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/message")
+//@RestController
+//@RequestMapping("/api/message")
 public class TransactionController {
+    /*
     private MessageProducer messageProducer;
 
     public TransactionController(MessageProducer messageProducer) {
@@ -28,4 +29,5 @@ public class TransactionController {
         }
 
     }
+     */
 }
