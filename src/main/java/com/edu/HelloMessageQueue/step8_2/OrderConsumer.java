@@ -3,7 +3,7 @@ package com.edu.HelloMessageQueue.step8_2;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class OrderConsumer {
     private int retryCount;
 

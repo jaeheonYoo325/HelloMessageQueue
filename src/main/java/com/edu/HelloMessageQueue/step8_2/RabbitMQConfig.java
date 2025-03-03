@@ -4,24 +4,24 @@ import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class RabbitMQConfig {
     public static final String ORDER_COMPLETED_QUEUE = "orderCompletedQueue";
     public static final String DLQ = "deadLetterQueue";
     public static final String ORDER_TOPIC_EXCHANGE = "orderExchange";
     public static final String ORDER_TOPIC_DLX = "deadLetterExchange";
     public static final String DEAD_LETTER_ROUTING_KEY = "dead.letter";
-    @Bean
+//    @Bean
     public TopicExchange exchange() {
         return new TopicExchange(ORDER_TOPIC_EXCHANGE);
     }
 
-    @Bean
+//    @Bean
     public TopicExchange deadLetterExchange() {
         return new TopicExchange(ORDER_TOPIC_DLX);
     }
 
-    @Bean
+//    @Bean
     public Queue queue() {
         return QueueBuilder.durable(ORDER_COMPLETED_QUEUE)
                 .withArgument("x-dead-letter-exchange", ORDER_TOPIC_DLX)
@@ -29,17 +29,17 @@ public class RabbitMQConfig {
                 .build();
     }
 
-    @Bean
+//    @Bean
     public Queue deadLetterQueue() {
         return new Queue(DLQ);
     }
 
-    @Bean
+//    @Bean
     public Binding binding() {
         return BindingBuilder.bind(queue()).to(exchange()).with("order.completed.*");
     }
 
-    @Bean
+//    @Bean
     public Binding deadLetterBinding() {
         return BindingBuilder.bind(deadLetterQueue()).to(deadLetterExchange()).with(DEAD_LETTER_ROUTING_KEY);
     }
